@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: test
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL
+    username: test
+    password: test
+  jpa:
+    open-in-view: false
+
+logging:
+  level:
+    sql: debug
+    '[io.github.meritepk.webapp]': debug
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}] ${HOSTNAME}"
